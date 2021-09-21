@@ -3,15 +3,15 @@ body{
 }
 .logo{
     position: absolute;
-    width: 400px;
-    height: 450px;
-    left: 36%;
+    width: 500px;
+    height: 500px;
+    left: 33%;
     top: -150px;
 }
 .doodle{
     position: absolute;
-    width: 550px;
-    height: 550px;
+    width: 520px;
+    height: 480px;
     left: 800px;
     top: 200px;
     /* background-image: url(kitchen_doodle-removebg-preview.png); */
@@ -21,7 +21,7 @@ body{
 .login{
     position: absolute;
     width: 597.46px;
-    height: 400.11px;
+    height: 350.11px;
     left: 105.54px;
     top: 350px;
 }
@@ -30,8 +30,8 @@ body{
     position: absolute;
     width: 597.46px;
     height: 67.71px;
-    left: 50px;
-    top: -100px;
+    left: 0px;
+    top: -125px;
 
     font-family: 'Sacramento', cursive;
     font-style: normal;
@@ -46,7 +46,7 @@ body{
     position: absolute;
     width: 300.1px;
     height: 59.74px;
-    left: 90.54px;
+    left: 8px;
     top:50px;
     display: inline-block;
     background: #FFFFFF;
@@ -57,8 +57,8 @@ body{
     position: absolute;
     width: 300.1px;
     height: 59.74px;
-    left: 90.54px;
-    top:140px;
+    left: 8px;
+    top:133px;
     display: inline-block;
     background: #FFFFFF;
     border-radius: 30px;
@@ -79,7 +79,7 @@ body{
     position: absolute;
     width: 300px;
     height: 57.75px;
-    left: 90.54px;
+    left:8px;
     top: 220.8px;
 
     background: #FF5454;
@@ -104,13 +104,13 @@ body{
     position: absolute;
     width: 131.1px;
     height: 19.91px;
-    left: 220.54px;
+    left: 120.54px;
     top: 630.45px;
 
-    /* font-family: Montserrat; */
+    font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 20px;
     /* identical to box height */
 
@@ -123,13 +123,13 @@ body{
     position: absolute;
     width: 131.1px;
     height: 19.91px;
-    left: 360.54px;
+    left: 280.54px;
     top: 630.45px;
 
-    /* font-family: Montserrat; */
+    font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 20px;
     /* identical to box height */
 
