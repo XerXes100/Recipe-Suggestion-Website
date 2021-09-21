@@ -1,0 +1,37 @@
+body{
+    background-color: #F5F5F5;
+}
+.title_img{
+    width:350px;
+    height:100px;
+}
+.nav_bar {
+    list-style-type: none;
+    margin-top: 40px;
+    margin-right: 75px;
+    padding: 0;
+    display: inline;
+}
+  
+.nav_links {
+    display: inline;
+    margin:40px;
+    font-size: 22px;
+    font-family:"Montserrat",sans-serif;
+}
+
+.header{
+    display: flex;
+    justify-content:space-between;
+    margin:20px 7px;
+}
+
+a:link {
+    text-decoration: none;
+    color:black;
+}
+  
+a:visited {
+    text-decoration: none;
+    color:black;
+}
