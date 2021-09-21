@@ -17,8 +17,13 @@ body{
     top: 401px;
 
     background: url(kitchen_doodle-removebg-preview.png);
+
 }
 
 .login{
-    
+    position: absolute;
+    width: 597.46px;
+    height: 440.11px;
+    left: 105.54px;
+    top: 444.26px;
 }
