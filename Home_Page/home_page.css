@@ -1,10 +1,14 @@
 body{
     background-color: #F5F5F5;
 }
+
+
 .title_img{
     width:350px;
     height:100px;
 }
+
+
 .nav_bar {
     list-style-type: none;
     margin-top: 40px;
@@ -20,6 +24,7 @@ body{
     font-family:"Montserrat",sans-serif;
 }
 
+
 .header{
     display: flex;
     justify-content:space-between;
@@ -34,4 +39,59 @@ a:link {
 a:visited {
     text-decoration: none;
     color:black;
+}
+
+
+.sc_roll_1{
+    height:500px;
+    width:1000px;
+    margin: auto;
+    background-color:cornsilk;
+}
+
+
+
+.carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+    filter: invert(100%);
+    
+    
+}
+
+
+
+.sidenav{
+    margin-left: 20px;
+}
+
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color:white !important;
+    outline:none;
+    box-shadow: none !important;
+}
+
+
+.ingredient{
+    color:#FF0000;
+    font-family:"Montserrat",sans-serif;
+    font-size: 22px;
+}
+
+
+
+.img_resize{
+    height:500px;
+    width:1000px;
+    
+}
+
+
+.carousel-caption {
+    color: rgb(64,64,64)!important;
+    font-weight: 700;
+    font-size: 30px !important;    
+    position: relative;
+    margin-bottom:140px;
+    margin-left: 65px;
 }
