@@ -95,3 +95,28 @@ a:visited {
     margin-bottom:140px;
     margin-left: 65px;
 }
+
+
+#dropdownMenuButton{
+    background-color:rgb(221, 218, 218);
+    color:black;
+    width:370px;
+}
+
+
+#dropdownMenuButton:hover{
+    background-color: #FF5454;
+}
+
+
+
+
+.dropdown-menu{
+    width:370px;
+    
+}
+
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    background-color:#FF5454;
+}
