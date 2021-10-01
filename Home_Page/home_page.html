@@ -21,7 +21,7 @@
         <ul class="nav_bar">
             <li class="nav_links"><a href="#home.html">Home</a></li>
             <li class="nav_links"><a href="#about_us.html">About Us</a></li>
-            <li class="nav_links"><a href="#pr.html">Popular Recipies</a></li>
+            <!-- <li class="nav_links"><a href="#pr.html">Popular Recipies</a></li> -->
             <li class="nav_links"><a href="#profile.html">Profile</a></li>
         </ul>
     </div><hr>
@@ -37,13 +37,24 @@
       
       <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Pantry</h5>
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
           <div>
             <p class="ingredient"><strong>Add Ingredient</strong></p>
           </div>
+          <div class="wrapper">
+            <div class="search-input">
+              <a href="" target="_blank" hidden></a>
+              <input type="text" placeholder="Type to search..">
+              <div class="autocom-box">
+                <!-- here list are inserted from javascript -->
+              </div>
+              <div class="icon"><i class="fas fa-search"></i></div>
+            </div>
+          </div>
+          
           <div class="dropdown mt-3">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
               Fruit
