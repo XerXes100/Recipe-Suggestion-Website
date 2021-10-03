@@ -112,6 +112,8 @@ a:hover {
     background-color: rgb(221, 218, 218);
     color: black;
     width: 370px;
+    position: relative;
+    margin-top: 30px;
 }
 
 
@@ -124,15 +126,21 @@ a:hover {
 
 .dropdown-menu {
     width: 370px;
-
 }
 
 
-.dropdown-menu>li>a:hover,
-.dropdown-menu>li>a:focus {
+.dropdown-menu>li:hover,
+.dropdown-menu>li:focus {
     background-color: #FF5454;
 }
 
+.dropdown-menu>li{
+   margin-left: 10px;
+}
+
+.dropdown-menu>li>input{
+    margin-left: 50px;
+ }
 
 
 ::selection {
@@ -142,7 +150,8 @@ a:hover {
 
 .wrapper {
     max-width: 450px;
-    margin: 150px auto;
+    /* margin: 150px auto; */
+    margin-top: 0px;
 }
 
 .wrapper .search-input {
