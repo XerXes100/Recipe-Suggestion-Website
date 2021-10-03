@@ -44,16 +44,17 @@ a:hover {
 
 .main-content {
   font-family: "Montserrat", sans-serif;
-  padding: 20px 30px;
+  padding: 3px 30px;
   display: flex;
   /* justify-content: space-between; */
 }
 
 .pantry {
   background-color: lightgrey;
-  border-radius: 20px;
+  border-radius: 25px;
   display: inline-block;
   padding: 15px;
+  height: 630px;
 }
 
 .pantry-header {
@@ -91,8 +92,7 @@ a:hover {
 
 .recipes {
   display: inline-block;
-  /* flex: 1; */
-  padding: 20px;
+  padding: 0px 20px 15px 50px;
 }
 
 .recipes-header {
@@ -102,21 +102,38 @@ a:hover {
   background-color: #FF5454;
   font-size: 20px;
   color: white;
-  /* display: inline-block; */
-  margin: auto;
+  margin-bottom: 5px;
+}
+
+.recipes-display {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .recipes-box {
-  height: 300px;
+  height: 250px;
   width: 200px;
   background-color: lightgrey;
-  margin: 15px;
+  margin: 13px 10px;
   display: inline-block;
 }
 
 .recipe-images {
   height: 200px;
   width: 200px;
+}
+
+.more-recipes {
+  text-align: center;
+  padding: 3px 40px;
+  border-radius: 20px;
+  background-color: #FF5454;
+  font-size: 17px;
+  color: white;
+  margin-left: 39%;
+  display: inline-block;
+  margin-top: 5px;
 }
 
 /* .sc_roll_1 {
