@@ -132,15 +132,20 @@ a:hover {
 .dropdown-menu>li:hover,
 .dropdown-menu>li:focus {
     background-color: #FF5454;
+    border-radius: 3px;
+    margin-left: 0px;
 }
 
 .dropdown-menu>li{
-   margin-left: 10px;
+    margin-left: 5px;
+    padding: 2px;
 }
 
-.dropdown-menu>li>input{
-    margin-left: 50px;
- }
+.dropdown-menu>li>img{
+    height: 50px;
+    width: 50px;
+}
+
 
 
 ::selection {
