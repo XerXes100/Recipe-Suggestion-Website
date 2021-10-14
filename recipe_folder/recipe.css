@@ -1,0 +1,52 @@
+body {
+    background-color: #F5F5F5;
+}
+
+
+.title_img {
+    width: 270px;
+    height: 80px;
+}
+
+
+.nav_bar {
+    list-style-type: none;
+    margin-top: 20px;
+    margin-right: 75px;
+    padding: 0;
+    display: inline;
+}
+
+.nav_links {
+    display: inline;
+    margin: 40px;
+    font-size: 22px;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 7px;
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: #FF5454;
+}
+
+.img1{
+    margin:70px 100px;
+    width: 400px;
+    height:300px;
+}
