@@ -44,3 +44,20 @@ a:visited {
 a:hover{
     color:#FF5454;
 }
+
+.main{
+    background-color:#FEF9EF;
+    margin:80px 150px 100px 150px;
+    padding: 50px;
+    border-radius: 20px;
+    border: solid 2px;
+}
+
+h1{
+    color: #FF5454;
+    font-family: Montserrat;
+}
+
+.hr{
+    width:800px;
+}
