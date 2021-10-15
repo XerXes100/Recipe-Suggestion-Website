@@ -42,7 +42,7 @@ body{
     color: #000000;
 }
 
-#email{
+.email{
     position: absolute;
     width: 300.1px;
     height: 59.74px;
@@ -51,9 +51,16 @@ body{
     display: inline-block;
     background: #FFFFFF;
     border-radius: 30px;
+    font-family: Montserrat, sans-serif;;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    border:none;
+    padding-left: 20px;
 }
 
-#password{
+.password{
     position: absolute;
     width: 300.1px;
     height: 59.74px;
@@ -62,20 +69,17 @@ body{
     display: inline-block;
     background: #FFFFFF;
     border-radius: 30px;
+    font-family: Montserrat, sans-serif;;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    border:none;
+    padding-left: 20px;
 }
 
-#password{
-    position: absolute;
-    width: 300.1px;
-    height: 59.74px;
-    left: 8px;
-    top:133px;
-    display: inline-block;
-    background: #FFFFFF;
-    border-radius: 30px;
-}
 
-#name{
+.name{
     position: absolute;
     width: 300.1px;
     height: 59.74px;
@@ -84,41 +88,35 @@ body{
     display: inline-block;
     background: #FFFFFF;
     border-radius: 30px;
-}
-
-.email-text{
-    position: absolute;
     font-family: Montserrat, sans-serif;;
     font-style: normal;
     font-weight: normal;
-    font-size: 22px;
+    font-size: 18px;
     line-height: 27px;
-    left:30px;
-    top:-8px;
+    border:none;
+    padding-left: 20px;
 }
 
-.l_button{
+
+.signbtn{
     position: absolute;
     width: 300px;
     height: 57.75px;
     left:8px;
     top: 300px;
-
     background: #FF5454;
     border-radius: 30px;
-}
-
-.ltext{
-    position: absolute;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;;
     font-style: normal;
     font-weight: normal;
     font-size: 22px;
     line-height: 27px;
-    /* identical to box height */
-    left:120px;
-    top:-10px;
-
-    color: #FFFFFF;
+    border: none;
 }
+
+.signbtn:active {
+    background-color: #FF5454;
+    transform: translateY(2px);
+}
+
 
