@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    
     <title>Home</title>
 </head>
 
@@ -20,7 +19,7 @@
         <img src="TitleLogo.png" alt="TitleLogo" class="title_img">
         <ul class="nav_bar">
             <li class="nav_links"><a href="#home.html">Home</a></li>
-            <li class="nav_links"><a href="#about_us.html">About Us</a></li>
+            <li class="nav_links"><a href="../About_us/aboutus.html">About Us</a></li>
             <!-- <li class="nav_links"><a href="#pr.html">Popular Recipies</a></li> -->
             <li class="nav_links"><a href="#profile.html">Profile</a></li>
         </ul>
@@ -165,32 +164,30 @@
 
 
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>  
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-      document.getElementById('select').onclick = function() {
-      var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-      let x=new Array();
-      for (var checkbox of checkboxes) {
-          x.push(checkbox.value);
-      }
-      document.getElementById("n_items").innerHTML=x.length;
-  }
+   <script>
+    document.getElementById('select').onclick = function() {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    let x=new Array();
+    for (var checkbox of checkboxes) {
+        x.push(checkbox.value);
+    }
+    document.getElementById("n_items").innerHTML=x.length;
+}
 
 
 //     $('input[type='checkbox']').click(function(event) {
 //       if(this.checked) {
 //       $('.invoiceOption').each(function() {
 //         this.checked = true;
-      
+
 //       });
 //       } else {
 //       $('.invoiceOption').each(function() {
 //         this.checked = false;
-    
+
 //       });
 //     }
 //  });
-      </script>
-      
+    </script
   </body>
 </html>

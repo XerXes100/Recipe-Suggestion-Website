@@ -5,33 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login page</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Sacramento&display=swap" rel="stylesheet">
 </head>
 <body>
     <div>
-        <img class="logo" src="/First_page/TitleLogo.png" alt="">
+        <a href="../First_page/index.html"><img class="logo" src="TitleLogo.png" alt=""></a>
     </div>
+    
     <div class="login">
         <p class="text">Log-in to your account</p>
-        <form action="/" method="POST">
-            <div>
-                <input type="text" class="email-text" placeholder="Email" name="username"></input>
-            </div>
-            <div>
-                <input type="text" class="password-text" placeholder="Password" name="password"></input>  
-            </div>
-            <input type="submit" class="l_button" value="LOGIN">
-            </div>
-        </form>
+        
+        <div>
+            <input class="email-text" placeholder="someone@xyz.com" name="email">
+        </div>
+        
+        <div>
+            <input type="password" class="password-text" placeholder="Password" name="password">    
+        </div>
+        <div>
+            <button class="ltext">Login</button>
+        </div>
+    </div>
+    
     <div>
-        <img  class="doodle" src="/First_page/kitchen_doodle-removebg-preview.png" alt="">
+        <img  class="doodle" src="kitchen_doodle-removebg-preview.png" alt="">
     </div>
 
-    <p id="acc1">Create Account</p>
-    <p id="acc2">Forget Password</p>
+    <p id="acc1"><a href="../Signup/signup.html">Create Account</a></p>
+    <p id="acc2"><a href="../Forgot_pass/forgot.html">Forget Password</a></p>
     
 </body>
 </html>
