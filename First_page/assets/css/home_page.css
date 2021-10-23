@@ -125,7 +125,9 @@ a:hover {
 
 
 .dropdown-menu {
-    width: 370px;
+    width: 100%;
+    max-width: 660px;
+    /* width: 370px; */
 }
 
 

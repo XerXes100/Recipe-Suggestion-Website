@@ -3,7 +3,7 @@ const express = require('express');
 var mysql = require('mysql');
 const bodyParser = require('body-parser');
 const encoder = bodyParser.urlencoded();
-
+const app2=express();
 const app = express();
 
 app.use(express.static("assets"));
@@ -29,6 +29,20 @@ con.connect(function (err) {
 app.get("/", function (req, res) {
     // res.sendFile("./First_page/index.html");
     res.sendFile(__dirname + "/index.html");
+});
+
+app.get("/signup", function (req, res) {
+    // res.sendFile("./First_page/index.html");
+    // res.sendFile("../S");
+    let reqPath1 = path.join(__dirname, '../Signup/signup.html');
+    res.sendFile(reqPath1);
+});
+
+app.get("/forgotpass", function (req, res) {
+    // res.sendFile("./First_page/index.html");
+    // res.sendFile("../S");
+    let reqPath2 = path.join(__dirname, '../Forgot_pass/forgot.html');
+    res.sendFile(reqPath2);
 });
 
 

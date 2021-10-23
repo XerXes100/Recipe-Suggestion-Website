@@ -28,7 +28,11 @@ con.connect(function (err) {
 
 app.get("/", function (req, res) {
     // res.sendFile("./First_page/index.html");
-    res.sendFile(__dirname + "/forgot.html");
+    // res.sendFile(__dirname + "/forgot.html");
+    // res.sendFile(__dirname + "/email_sent.html");
+    // CSS NAHI AA RAHA 
+    let reqPath2 = path.join(__dirname, '../Forgot_pass/forgot.html');
+    res.sendFile(reqPath2);
 });
 
 var useremail = '';

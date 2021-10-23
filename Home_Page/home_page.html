@@ -55,57 +55,97 @@
             </div>
           </div>
           
-          <div class="dropdown mt-3">
+          <div class="dropdown mt-3" >
+            <!-- data-spy="scroll" data-target=".navbar" data-offset="50"  -->
+            
             
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
             Fruits</button>
             
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li><img src="../apple.png"><input type="checkbox" id="Apple" name="fruit" value="Apple">Apple</li>
-              <li><img src="../banana.jpg"><input type="checkbox" id="Banana" name="fruit" value="Banana">Banana</li>
-              <li><img src="../mango.png"><input type="checkbox" id="Mango" name="fruit" value="Mango">Mango</li>
-            </ul><br><br>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="fruits">
+              
+            </ul>
             
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
             Vegetables</button>
             
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <!-- <li><img src="../onion.jpg"><input type="checkbox" id="Onion" name="vege" value="Onion">Onion</li>
-              <li><img src="../asparagus.jpg"><input type="checkbox" id="Asparagus" name="vege" value="Asparagus">Asparagus</li>
-              <li><img src="../cauliflower.jpg"><input type="checkbox" id="Cauliflower" name="vege" value="Cauliflower">Cauliflower</li> -->
-            </ul><br><br>
-            
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-            Cereals and Pulses</button>
-            
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li><img src="../wheat.jpg"><input type="checkbox" id="Wheat" name="cap" value="Wheat">Wheat</li>
-              <li><img src="../corn.png"><input type="checkbox" id="Corn" name="cap" value="Corn">Corn</li>
-              <li><img src="../lentils.png"><input type="checkbox" id="Lentils" name="cap" value="Lentils">Lentils</li>
-            </ul><br><br>
-            
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-            Poultry Products</button>
-            
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li><img src="../eggs.jpg"><input type="checkbox" id="Eggs" name="pp" value="Eggs">Eggs</li>
-              <li><img src="../chicken.png"><input type="checkbox" id="Chicken" name="pp" value="Chicken">Chicken</li>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="vegetables">
+             
             </ul>
+            
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Spices</button>
+            
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="spices">
+              
+            </ul>
+            
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Dairy</button>
+            
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dairy"></ul>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Bakery</button>
+
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="bakery"></ul>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Seeds</button>
+  
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="seeds"></ul>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Dry Fruits</button>
+    
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dry_fruit"></ul>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Poultry</button>
+      
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="poultry"></ul>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Flour</button>
+        
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="flour"></ul>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Nuts</button>
+          
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="nuts"></ul>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Oils</button>
+            
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="oil"></ul>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Herbs</button>
+              
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="herbs"></ul>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Pulses</button>
+                
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="pulses"></ul>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Salt</button>
+                
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="salt"></ul>
+            
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Miscellaneous</button>
+                
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="miscellaneous"></ul>
+
           </div>
         </div>
         <p id="items"></p>
         <button id="select">Submit</button>
       </div>
-
-
-
-      
-            
-
-
-
-
-
 
     <div id="carouselExampleCaptions" class="carousel slide sc_roll_1" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -167,35 +207,7 @@
 
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>  
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-      document.getElementById('select').onclick = function() {
-      var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-      let x=new Array();
-      for (var checkbox of checkboxes) {
-          x.push(checkbox.value);
-      }
-      console.log(x);
-      document.getElementById("n_items").innerHTML=x.length;
-      for (let i = 0; i < x.length; i++) {
-        let y="<b>"+x[i]+"<br>"
-        document.getElementById("items").innerHTML+=" "+y;
-        }
-  }
-
-
-//     $('input[type='checkbox']').click(function(event) {
-//       if(this.checked) {
-//       $('.invoiceOption').each(function() {
-//         this.checked = true;
-      
-//       });
-//       } else {
-//       $('.invoiceOption').each(function() {
-//         this.checked = false;
-    
-//       });
-//     }
-//  });
-      </script>
+   <script src="checkbox_length.js"></script> 
+   <script src="ingredients_list.js"></script>
   </body>
 </html>

@@ -1,0 +1,135 @@
+body{
+    background-color: #F5F5F5;
+}
+
+.logo{
+    position: absolute;
+    width: 450px;
+    height: 150px;
+    left: 33%;
+    top: 0px;
+}
+
+.forgot_container{
+    background-color: #FF5454;
+    position: relative;
+    top:200px;
+    left: 500px;
+    width: 500px;
+    height: 500px;
+    /* background-color:white; */
+    margin-bottom: 50px;
+    /* box-shadow:8px 8px black, 10px 10px 10px black; */
+    box-shadow: 0 0 15px darkslategrey;
+    border-radius: 30px;
+}
+
+.pass_text{
+    /* position: relative; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    margin-top:70px;
+}
+
+.pass_icon{
+    position: relative;
+    /* left: 200px; */
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin:auto;
+    top:40px;
+}
+
+#email{
+    position: relative;
+    width: 300.1px;
+    height: 59.74px;
+    left:100px;
+    top:50px;
+    display: inline-block;
+    background: #FFFFFF;
+    border-radius: 30px;
+}
+/* .email-text{
+    position: absolute;
+    font-family: Montserrat, sans-serif;;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 27px;
+    left:30px;
+    top:-8px;
+    color: gray;
+} */
+
+.email-text{
+    width: 300.1px;
+    height: 59.74px;
+    border-radius: 30px;
+    position: absolute;
+    font-family: Montserrat, sans-serif;;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    left:100px;
+    top:250px;
+    border: none;
+    color: black;
+    padding-left: 20px;
+}
+
+/* .l_button{
+    position: absolute;
+    width: 300px;
+    height: 57.75px;
+    left:100px;
+    top: 400px;
+
+    background:#E7E5E5;
+    border-radius: 30px;
+} */
+
+.l_button{
+    position: absolute;
+    width: 300px;
+    height: 57.75px;
+    left:100px;
+    top: 400px;
+
+    background: #E7E5E5;
+    border-radius: 30px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    color: red;
+    border: none;
+}
+
+.l_button:active{
+    background-color: #E7E5E5;
+    transform: translateY(2px);
+}
+
+.ltext{
+    position: absolute;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 27px;
+    /* identical to box height */
+    left:110px;
+    top:-8px;
+
+    color: red;
+}
+
+::placeholder {
+    position:relative;
+    left:20px;
+  }
