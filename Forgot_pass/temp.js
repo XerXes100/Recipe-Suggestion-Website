@@ -6,7 +6,7 @@ const encoder = bodyParser.urlencoded();
 
 const app = express();
 
-app.use(express.static("assets"));
+app.use(express.static("/assets"));
 // app.use("../assets", express.static("../assets"));
 // app.use(express.static(__dirname + '/assets'));
 
@@ -34,6 +34,8 @@ app.get("/", function (req, res) {
     let reqPath2 = path.join(__dirname, '../Forgot_pass/forgot.html');
     res.sendFile(reqPath2);
 });
+
+
 
 var useremail = '';
 

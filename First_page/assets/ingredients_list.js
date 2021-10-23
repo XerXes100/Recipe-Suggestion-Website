@@ -1,21 +1,21 @@
-var animals = ["avocado","bluebeerries"];
-var vegetables=["asparagus", "basil leaves","carrot","cauliflower","chives","cilantro","coriander","corn","cucumber","curry Leaves","eggplant","garlic","ginger","green Beans","green Chillies","jalapenos","lemon","lemongrass","lentils", "lettuce","mushroom","onion","parsley","potato","shallots","spinach","tomato","yucca root","zucchini"];
-var spices = ["asafoetida", "black pepper","chili powder","chipotle pepper","clove","cumin","cumin powder","five spice powder","garam masala","garlic powder","mango powder","mustard","onion powder","paprika"];
-var bakery = ["baguette","brown bread","pita bread"];
-var dairy = ["butter", "cheddar cheese","cream cheese","egg","egg white","egg yolk","fresh cream","ghee","heavy cream","mayonnaise","milk","mozerella cheese","parmesan cheese","ricotta","Yoghurt" ]
-var seeds = ["carom seeds","coriander seeds","sesame"];
+var animals = ["avocado","blueberries"];
+var vegetables=["asparagus", "basil_leaves","carrot","cauliflower","chives","cilantro","coriander","corn","cucumber","curry_Leaves","eggplant","garlic","ginger","green_Beans","green_Chillies","jalapenos","lemon","lemongrass","lentils", "lettuce","mushroom","onion","parsley","potato","shallots","spinach","tomato","yucca_root","zucchini"];
+var spices = ["asafoetida", "black_pepper","chili_powder","chipotle_pepper","clove","cumin","cumin_powder","five_spice_powder","garam_masala","garlic_powder","mango_powder","mustard","onion_powder","paprika"];
+var bakery = ["baguette", "brown_bread", "pita_bread"];
+var dairy = ["butter", "cheddar_cheese","cream_cheese","egg","egg_white","egg_yolk","fresh_cream","ghee","heavy_cream","mayonnaise","milk","mozerella_cheese","parmesan_cheese","ricotta","Yoghurt" ]
+var seeds = ["carom_seeds","coriander_seeds","sesame"];
 var dry_fruit = ["cashew"];
-var poultry = ["chicken_brest","chicken legs","chicken stock","chuck roast","Ham","prosciuotto","salmon"];
-var flour = ["corn flour","flour","gram flour","idli rava","rice flour","semolina","wheat flour"];
-var nuts = ["ground nutmeg","nutmeg"];
+var poultry = ["chicken_brest","chicken_legs","chicken_stock","chuck_roast","Ham","prosciuotto","salmon"];
+var flour = ["corn_flour","flour","gram_flour","idli_rava","rice_flour","semolina","wheat_flour"];
+var nuts = ["ground_nutmeg","nutmeg"];
 var nut = ["peanut"];
-var oil = ["olive oil","sesame oil","veg oil"];
+var oil = ["olive_oil","sesame_oil","veg_oil"];
 var herbs = ["tarragon","turmeric"];
-var pulses = ["chana dal","urad dal"];
+var pulses = ["chana_dal","urad_dal"];
 var salt = ["salt"];
-var miscellaneous=["cocoa powder","coconut","dosa batter","enchilada sauce","eno salt","guacamole","macroni","maple syrup","oregano","peanut butter","pepper flakes","red_chilli_flakes","sesame paste","sev","soy sauce","sriracha","sugar","tofu","tomato paste","tortilla","tostada shells","veg stock","vinegar","wheat noodles","white wine","Yeast","ziti pasta","poha"];
+var miscellaneous=["cocoa_powder","coconut","dosa_batter","enchilada_sauce","eno_salt","guacamole","macroni","maple_syrup","oregano","peanut_butter","pepper_flakes","red_chilli_flakes","sesame_paste","sev","soy_sauce","sriracha","sugar","tofu","tomato_paste","tortilla","tostada_shells","veg_stock","vinegar","wheat_noodles","white_wine","yeast","ziti_pasta","poha"];
 var myDiv1 = document.getElementById("fruits");
-var myDiv2= document.getElementById("vegetables");
+var myDiv2 = document.getElementById("vegetables");
 var myDiv3 = document.getElementById("spices");
 var myDiv4 = document.getElementById("bakery");
 var myDiv5 = document.getElementById("dairy");
@@ -74,7 +74,7 @@ for (var i = 0; i < vegetables.length; i++) {
     // myDiv2.appendChild(checkBox);
     // myDiv2.appendChild(label);
     // label.appendChild(document.createTextNode(vegetables[i]));
-    console.log(myDiv2);
+    // console.log(myDiv2);
 }
 
 for (var i = 0; i < spices.length; i++) {
