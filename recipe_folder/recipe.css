@@ -46,7 +46,30 @@ a:hover {
 }
 
 .img1{
-    margin:70px 100px;
+    margin:20px 100px;
     width: 400px;
     height:300px;
+}
+
+.head{
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 40px;
+}
+
+.main{
+    background-color: #FF5454;
+}
+
+.middle{
+    display: flex;
+}
+
+.text_step{
+    color: black;
+    font-size: 30px;
+}
+
+.steps{
+    /* text-align: center; */
 }

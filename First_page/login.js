@@ -1,13 +1,17 @@
+
 const express = require('express');
 var mysql = require('mysql');
 const bodyParser = require('body-parser');
 const encoder = bodyParser.urlencoded();
-
+const app2=express();
 const app = express();
-const path= require('path');
-app.use("/assets", express.static("assets"));
 
-// console.log(dirname);
+app.use(express.static("assets"));
+// app.use("../assets", express.static("../assets"));
+// app.use(express.static(__dirname + '/assets'));
+
+
+const path=require('path');
 
 var con = mysql.createConnection({
     host: "localhost",
@@ -23,7 +27,22 @@ con.connect(function (err) {
 
 
 app.get("/", function (req, res) {
+    // res.sendFile("./First_page/index.html");
     res.sendFile(__dirname + "/index.html");
+});
+
+app.get("/signup", function (req, res) {
+    // res.sendFile("./First_page/index.html");
+    // res.sendFile("../S");
+    let reqPath1 = path.join(__dirname, '../Signup/signup.html');
+    res.sendFile(reqPath1);
+});
+
+app.get("/forgotpass", function (req, res) {
+    // res.sendFile("./First_page/index.html");
+    // res.sendFile("../S");
+    let reqPath2 = path.join(__dirname, '../Forgot_pass/forgot.html');
+    res.sendFile(reqPath2);
 });
 
 
