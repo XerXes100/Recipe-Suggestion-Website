@@ -1,0 +1,25 @@
+body{
+    background-color: #F5F5F5;
+}
+
+.logo{
+    position: absolute;
+    width: 450px;
+    height: 150px;
+    left: 33%;
+    top: 0px;
+}
+
+.newpass_container{
+    background-color: #FF5454;
+    position: relative;
+    top:200px;
+    left: 500px;
+    width: 500px;
+    height: 500px;
+    /* background-color:white; */
+    margin-bottom: 50px;
+    /* box-shadow:8px 8px black, 10px 10px 10px black; */
+    box-shadow: 0 0 15px darkslategrey;
+    border-radius: 30px;
+}

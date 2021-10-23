@@ -16,8 +16,8 @@ const path=require('path');
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "sang123",
-    database: "user_info",
+    password: "Varun017",
+    database: "wp_project",
 });
 
 con.connect(function (err) {

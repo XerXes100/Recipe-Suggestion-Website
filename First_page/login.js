@@ -17,7 +17,7 @@ var con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "Varun017",
-    database: "user_info",
+    database: "wp_project",
 });
 
 con.connect(function (err) {
