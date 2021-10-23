@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="home_page.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-  <title>Home</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/home_page.css">
+    <!-- <link rel="stylesheet" href="home_page.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    
+    <title>Home</title>
 </head>
-
 
 
 <body>
     <div class="header">
-        <img src="TitleLogo.png" alt="TitleLogo" class="title_img">
+        <img src="../TitleLogo_2.png" alt="TitleLogo" class="title_img">
         <ul class="nav_bar">
             <li class="nav_links"><a href="#home.html">Home</a></li>
             <li class="nav_links"><a href="#about_us.html">About Us</a></li>
@@ -29,12 +29,13 @@
     
 
     <a class="sidenav" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-        <img src="icons8-menu-24.png">
+        <img src="../icons8-menu-24.png">
       </a>
       
       <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasExampleLabel">Pantry</h5>
+          <div id="n_items">0</div>
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         
@@ -54,136 +55,157 @@
             </div>
           </div>
           
-          <div class="dropdown mt-3">
+          <div class="dropdown mt-3" >
+            <!-- data-spy="scroll" data-target=".navbar" data-offset="50"  -->
+            
             
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
             Fruits</button>
             
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li><img src="images/apple.png"><input type="checkbox" id="Apple" name="fruit" value="Apple">Apple</li>
-              <li><img src="images/banana.jpg"><input type="checkbox" id="Banana" name="fruit" value="Banana">Banana</li>
-              <li><img src="imagesmango.png"><input type="checkbox" id="Mango" name="fruit" value="Mango">Mango</li>
-            </ul><br><br>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="fruits">
+              
+            </ul>
             
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
             Vegetables</button>
             
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li><img src="images/onion.jpg"><input type="checkbox" id="Onion" name="vege" value="Onion">Onion</li>
-              <li><img src="images/asparagus.jpg"><input type="checkbox" id="Asparagus" name="vege" value="Asparagus">Asparagus</li>
-              <li><img src="images/cauliflower.jpg"><input type="checkbox" id="Cauliflower" name="vege" value="Cauliflower">Cauliflower</li>
-            </ul><br><br>
-            
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-            Cereals and Pulses</button>
-            
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li><img src="images/wheat.jpg"><input type="checkbox" id="Wheat" name="cap" value="Wheat">Wheat</li>
-              <li><img src="images/corn.png"><input type="checkbox" id="Corn" name="cap" value="Corn">Corn</li>
-              <li><img src="images/lentils.png"><input type="checkbox" id="Lentils" name="cap" value="Lentils">Lentils</li>
-            </ul><br><br>
-            
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-            Poultry Products</button>
-            
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li><img src="images/eggs.jpg"><input type="checkbox" id="Eggs" name="pp" value="Eggs">Eggs</li>
-              <li><img src="images/chicken.png"><input type="checkbox" id="Chicken" name="pp" value="Chicken">Chicken</li>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="vegetables">
+             
             </ul>
+            
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Spices</button>
+            
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="spices">
+              
+            </ul>
+            
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Dairy</button>
+            
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dairy"></ul>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Bakery</button>
+
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="bakery"></ul>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Seeds</button>
+  
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="seeds"></ul>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Dry Fruits</button>
+    
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dry_fruit"></ul>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Poultry</button>
+      
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="poultry"></ul>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Flour</button>
+        
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="flour"></ul>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Nuts</button>
+          
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="nuts"></ul>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Oils</button>
+            
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="oil"></ul>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Herbs</button>
+              
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="herbs"></ul>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Pulses</button>
+                
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="pulses"></ul>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Salt</button>
+                
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="salt"></ul>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Miscellaneous</button>
+                
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="miscellaneous"></ul>
+
           </div>
         </div>
+        <p id="items"></p>
+        <button id="select">Submit</button>
       </div>
 
-      <div class="dropdown mt-3">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-          Fruit
+    <div id="carouselExampleCaptions" class="carousel slide sc_roll_1" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active ">
+            <img src="img_2.jpg" class="d-block w-100 img_resize" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <!-- <h5>First slide label</h5>
+              <p>Some representative placeholder <br>content for the first slide.</p> -->
+              <h2>What's in your fridge,<br> pantry, bar?</h2>
+              <h3><br>We provide cooking inspiration and ideas.</h3>
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <img src="img_1.jpg" class="d-block w-100 img_resize" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <!-- <h5>Second slide label</h5>
+              <p>Some representative placeholder <br>content for the second slide.</p> -->
+              <h2>Search recipes customized to your food profile</h2>
+              <h3>Tell us your ingredients and get a custom recipe.</h3>
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <img src="img_6.jpg" class="d-block w-100 img_resize" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <!-- <h5>Third slide label</h5>
+              <p>Some representative placeholder <br>content for the third slide.</p> -->
+              <h2> "Ummmm....<br> what shall I make ____?"</h2><br>
+              <h3>With our help, use those ingredients now!</h3>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul><br><br>
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-          Vegetable
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-        <br><br>
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-          Cereal and Pulses
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-        <br><br>
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-          Poultry Products
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
       </div><br>
 
-    </div>
-  </div>
+      <form action="http://localhost:8080" method="POST">
+        <!-- <p id='ing' name="ingredient"></p> -->
+        <input type="text" id="ing" name="ingredient" value="">
+                <!-- <a href="http://localhost:8080" type="submit" class="l_button" value="Fetch Recipes">Fetch recipes</a> -->
+        <input type="submit" class="l_button" value="Fetch Recipes">
+      </form>
 
-  <div id="carouselExampleCaptions" class="carousel slide sc_roll_1" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active ">
-        <img src="img_2.jpg" class="d-block w-100 img_resize" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <!-- <h5>First slide label</h5>
-              <p>Some representative placeholder <br>content for the first slide.</p> -->
-          <h2>What's in your fridge,<br> pantry, bar?</h2>
-          <h3><br>We provide cooking inspiration and ideas.</h3>
-        </div>
+      <div>
+        <p class="poprec">Popular Recipies</p>
       </div>
-      <div class="carousel-item ">
-        <img src="img_1.jpg" class="d-block w-100 img_resize" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <!-- <h5>Second slide label</h5>
-              <p>Some representative placeholder <br>content for the second slide.</p> -->
-          <h2>Search recipes customized to your food profile</h2>
-          <h3>Tell us your ingredients and get a custom recipe.</h3>
-        </div>
-      </div>
-      <div class="carousel-item ">
-        <img src="img_6.jpg" class="d-block w-100 img_resize" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <!-- <h5>Third slide label</h5>
-              <p>Some representative placeholder <br>content for the third slide.</p> -->
-          <h2> "Ummmm....<br> what shall I make ____?"</h2><br>
-          <h3>With our help, use those ingredients now!</h3>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div><br>
+    
 
-  <div>
-    <p class="poprec">Popular Recipies</p>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-</body>
-
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>  
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="checkbox_length.js"></script> 
+   <script src="ingredients_list.js"></script>
+  </body>
 </html>

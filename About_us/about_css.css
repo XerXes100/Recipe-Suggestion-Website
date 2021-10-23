@@ -1,0 +1,63 @@
+body{
+    background-color: #F5F5F5;
+}
+
+
+.title_img{
+    width:270px;
+    height:80px;
+}
+
+
+.nav_bar {
+    list-style-type: none;
+    margin-top: 20px;
+    margin-right: 75px;
+    padding: 0;
+    display: inline;
+}
+  
+.nav_links {
+    display: inline;
+    margin:40px;
+    font-size: 22px;
+    font-family:"Montserrat",sans-serif;
+}
+
+
+.header{
+    display: flex;
+    justify-content:space-between;
+    margin:20px 7px;
+}
+
+a:link {
+    text-decoration: none;
+    color:black;
+}
+  
+a:visited {
+    text-decoration: none;
+    color:black;
+}
+
+a:hover{
+    color:#FF5454;
+}
+
+.main{
+    background-color:#FEF9EF;
+    margin:80px 150px 100px 150px;
+    padding: 50px;
+    border-radius: 20px;
+    border: solid 2px;
+}
+
+h1{
+    color: #FF5454;
+    font-family: Montserrat;
+}
+
+.hr{
+    width:800px;
+}
