@@ -1,5 +1,6 @@
 
-var mysql = require('mysql');
+// var mysql = require('mysql');
+const mysql = require('mysql-await');
 var path = require('path');
 var express = require('express');
 const bodyParser = require('body-parser');
@@ -19,7 +20,7 @@ con.connect(function (err) {
     console.log("Connected!");
 });
 
-function ing_id(ar) {
+async function ing_id(ar) {
     var ing_ids = Array();
     for (var i=0; i<ar.length; i++) {
         var string1 = ar[i];
@@ -28,24 +29,33 @@ function ing_id(ar) {
         console.log(ingredient_jname);
         var query2 = 'select Ingredient_Id from ingredients where Ingredient_Name = ?';
         var values = [ingredient_jname];
-        con.query(query2, values, function (error, results) {
-            console.log(results);
-            // var resultArray = Object.values(JSON.parse(JSON.stringify(rows)));
-            // console.log(resultArray);
-            console.log(results[0].Ingredient_Id);
-            ing_ids.push(results[0].Ingredient_Id);
-            console.log(ing_ids);
-        });
-       
+        result_id = async () => {
+                await con.awaitQuery(query2, values, function (error, results) {
+                console.log(results);
+                // var resultArray = Object.values(JSON.parse(JSON.stringify(rows)));
+                // console.log(resultArray);
+                console.log(results[0].Ingredient_Id);
+                ing_ids.push(results[0].Ingredient_Id);
+                console.log(ing_ids);
+            });
+        };
+        result_id();
     }
+
     console.log(ing_ids);
+    console.log(ing_ids.join(','));
+    var recipe_query = 'select Recipe_Id from relational where Ingre_Id in ?';
+    var recipe_values = [ing_ids];
+    console.log(recipe_query);
+    con.query(recipe_query,recipe_values, function(error, results){
+        console.log(results);
+    });
     // if (results.length > 0) {
     //     res.redirect("/welcome");
     // } else {
     //     res.redirect("/");
     // }
     // res.end();
-    
 }
 
 function fetch_recipes(ar) {
