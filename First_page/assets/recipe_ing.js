@@ -1,10 +1,11 @@
 
-// var mysql = require('mysql');
-const mysql = require('mysql-await');
+var mysql = require('mysql');
+// const mysql = require('mysql-await');
 var path = require('path');
 var express = require('express');
 const bodyParser = require('body-parser');
 const encoder = bodyParser.urlencoded();
+const util = require('util');
 
 const app = express();
 
@@ -20,8 +21,13 @@ con.connect(function (err) {
     console.log("Connected!");
 });
 
-async function ing_id(ar) {
-    var ing_ids = Array();
+const query_x = util.promisify(con.query).bind(con);
+
+let ing_ids = Array();
+
+function fetch_ingredients(ar) {
+    console.log("Aa raha hai");
+    // var ing_ids = Array();
     for (var i=0; i<ar.length; i++) {
         var string1 = ar[i];
         var ingredient_jname = string1.charAt(0).toLowerCase() + string1.slice(1);
@@ -29,33 +35,78 @@ async function ing_id(ar) {
         console.log(ingredient_jname);
         var query2 = 'select Ingredient_Id from ingredients where Ingredient_Name = ?';
         var values = [ingredient_jname];
-        result_id = async () => {
-                await con.awaitQuery(query2, values, function (error, results) {
-                console.log(results);
-                // var resultArray = Object.values(JSON.parse(JSON.stringify(rows)));
-                // console.log(resultArray);
-                console.log(results[0].Ingredient_Id);
-                ing_ids.push(results[0].Ingredient_Id);
-                console.log(ing_ids);
-            });
-        };
-        result_id();
-    }
 
-    console.log(ing_ids);
-    console.log(ing_ids.join(','));
-    var recipe_query = 'select Recipe_Id from relational where Ingre_Id in ?';
-    var recipe_values = [ing_ids];
-    console.log(recipe_query);
-    con.query(recipe_query,recipe_values, function(error, results){
-        console.log(results);
-    });
-    // if (results.length > 0) {
-    //     res.redirect("/welcome");
-    // } else {
-    //     res.redirect("/");
+        query_x(query2, values, function (error, results) {
+            console.log(results);
+            // var resultArray = Object.values(JSON.parse(JSON.stringify(rows)));
+            // console.log(resultArray);
+            console.log(results[0].Ingredient_Id);
+            ing_ids.push(results[0].Ingredient_Id);
+            console.log("Push kiya baba");
+            console.log(ing_ids);
+        });
+    }
+    // return ing_ids;
+}
+
+// print_ids = (ing_ids) => {console.log(ing_ids)};
+
+async function ing_id(ar) {
+    // var ing_ids = Array();
+    // var variable_temp;
+    // variable_temp = await fetch_ingredients(ar, ing_ids);
+    // if (variable_temp == true) {
+    //     print_ids(variable_temp);
     // }
-    // res.end();
+    // let new_ing_ids = await fetch_ingredients(ar, ing_ids);
+
+    function resolveAfter2Seconds(ar) {
+        console.log("Resolveafter2secs called");
+        return new Promise(resolve => {
+            setTimeout(() => {
+                // console.log("Here");
+                resolve(fetch_ingredients(ar));
+            }, 3000);
+        });
+    }
+    
+    // var new_ing_ids;
+    async function f1() {
+        console.log("f1 called");
+        // new_ing_ids = await resolveAfter2Seconds(ar);//var
+        await resolveAfter2Seconds(ar);
+        console.log("Ing_ids in f1: " + ing_ids);
+        // console.log("async:" + new_ing_ids); 
+        // return new_ing_ids;
+    }
+    
+    async function f2() {
+        await f1();
+        // console.log("Ing Ids:" + ing_ids);
+        // console.log("Ing Ids:" + new_ing_ids);
+        // console.log("ing_ids with join"+ new_ing_ids.join(','));
+        // console.log("updated:"+  new_ing_ids);
+        
+        // var recipe_query = 'select Recipe_Id from relational where Ingre_Id in (' + new_ing_ids.join(',') + ')';
+        // var recipe_values = [new_ing_ids];
+        // console.log(recipe_query);
+        // con.query(recipe_query,recipe_values, function(error,results){
+        //     console.log("Results: " + results);
+        // });
+        console.log("Ing Ids:" + ing_ids);
+        console.log("ing_ids with join"+ing_ids.join(','));
+        console.log("updated:"+  ing_ids);
+        
+        var recipe_query = 'select Recipe_Id from relational where Ingre_Id in (' + ing_ids.join(',') + ')';
+        var recipe_values = [ing_ids];
+        console.log(recipe_query);
+        con.query(recipe_query,recipe_values, function(error,results){
+            console.log("Results: " + results);
+        });
+        console.log("Andar hai");
+    };
+
+    f2();
 }
 
 function fetch_recipes(ar) {
