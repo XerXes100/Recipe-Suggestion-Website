@@ -3,15 +3,15 @@ const express = require('express');
 var mysql = require('mysql');
 const bodyParser = require('body-parser');
 const encoder = bodyParser.urlencoded();
-
+const path=require('path');
 const app = express();
 
-app.use(express.static("assets"));
+// app.use(express.static("assets"));
+app.use(express.static(path.join(__dirname, "../First_page/assets")));
 // app.use("../assets", express.static("../assets"));
 // app.use(express.static(__dirname + '/assets'));
 
-
-const path=require('path');
+// const path=require('path');
 
 var con = mysql.createConnection({
     host: "localhost",
@@ -31,7 +31,6 @@ app.get("/", function (req, res) {
 });
 
 app.post("/", encoder, function (req, res) {
-    res.redirect("/reset_success");
     var useremail = req.body.emailid;
     var new_password = req.body.new_password;
     var confirm_password = req.body.confirm_password;
@@ -49,6 +48,7 @@ app.post("/", encoder, function (req, res) {
             // } else {
             //     alert('')
             // }
+            res.redirect("http://localhost:8000");
             res.end();
         });
     }
@@ -57,12 +57,12 @@ app.post("/", encoder, function (req, res) {
     }
 });
 
-app.get("/reset_success", function (req, res) {
-    // res.sendFile("C:/Users/SANGRITH KRISHNA/Documents/GitHub/WP-Project/Home_Page/home_page.html");
-    let reqPath = path.join(__dirname, '../First_page/index.html');
-    res.sendFile(reqPath);
-    // console.log(dirname);
-});
+// app.get("/reset_success", function (req, res) {
+//     // res.sendFile("C:/Users/SANGRITH KRISHNA/Documents/GitHub/WP-Project/Home_Page/home_page.html");
+//     let reqPath = path.join(__dirname, '../First_page/index.html');
+//     res.sendFile(reqPath);
+//     // console.log(dirname);
+// });
 
 
 //set app port

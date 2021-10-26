@@ -3,15 +3,13 @@ const express = require('express');
 var mysql = require('mysql');
 const bodyParser = require('body-parser');
 const encoder = bodyParser.urlencoded();
-
+const path=require('path');
 const app = express();
 
-app.use(express.static("/assets"));
+// app.use(path.join(__dirname, '../First_page/assets'), express.static("assets"));
+app.use(express.static(path.join(__dirname, "../First_page/assets")));
 // app.use("../assets", express.static("../assets"));
 // app.use(express.static(__dirname + '/assets'));
-
-
-const path=require('path');
 
 var con = mysql.createConnection({
     host: "localhost",
@@ -25,21 +23,7 @@ con.connect(function (err) {
     console.log("Connected!");
 });
 
-
-app.get("/", function (req, res) {
-    // res.sendFile("./First_page/index.html");
-    // res.sendFile(__dirname + "/forgot.html");
-    // res.sendFile(__dirname + "/email_sent.html");
-    // CSS NAHI AA RAHA 
-    let reqPath2 = path.join(__dirname, '../Forgot_pass/forgot.html');
-    res.sendFile(reqPath2);
-});
-
-
-
 var useremail = '';
-
-
 
 var nodemailer = require('nodemailer');
 
@@ -49,6 +33,15 @@ var transporter = nodemailer.createTransport({
     user: 'wpproject1234@gmail.com',
     pass: 'project@123'
   }
+});
+
+app.get("/", function (req, res) {
+    // res.sendFile("./First_page/index.html");
+    // res.sendFile(__dirname + "/forgot.html");
+    // res.sendFile(__dirname + "/email_sent.html");
+    // CSS NAHI AA RAHA 
+    let reqPath2 = path.join(__dirname, '/forgot.html');
+    res.sendFile(reqPath2);
 });
 
 app.post("/", encoder, function (req, res) {
@@ -88,14 +81,12 @@ app.post("/", encoder, function (req, res) {
     })
 });
 
-
 app.get("/email_sent", function (req, res) {
     // res.sendFile("C:/Users/SANGRITH KRISHNA/Documents/GitHub/WP-Project/Home_Page/home_page.html");
     let reqPath = path.join(__dirname, '/email_sent.html');
     res.sendFile(reqPath);
     // console.log(dirname);
 });
-
 
 //set app port
 app.listen(4000)

@@ -63,9 +63,11 @@ document.getElementById('select').onclick = function() {
     if(x.length<=5){
         document.getElementById("n_items").innerHTML=x.length;
         document.getElementById("items").innerHTML = "";
+        document.getElementById("items").style.marginLeft = "20px";
+        document.getElementById("items").style.color = "#FF5454";
         var temp_str = "";
         for (let i = 0; i < x.length; i++) {
-            let y="<b>"+x[i]+"<b>";
+            let y="<b>"+x[i]+"<b><br>";
             document.getElementById("items").innerHTML += " "+y;
             // document.getElementById("ing").innerHTML += " "+y;
             temp_str += " "+x[i];
@@ -76,14 +78,14 @@ document.getElementById('select').onclick = function() {
     }
     else{
         alert("You can click only 5 Ingredients");
-        var element = document.getElementById("select");
-        element.onclick = function uncheckAll() {
-            var inputs = document.querySelectorAll('input[type="checkbox"]:checked');
-            // console.log(inputs);
-            for (var i = 0; i < inputs.length; i++) {
-                inputs[i].checked = false;
-            }
-        }
+        // var element = document.getElementById("select");
+        // element.onclick = function uncheckAll() {
+        //     var inputs = document.querySelectorAll('input[type="checkbox"]:checked');
+        //     // console.log(inputs);
+        //     for (var i = 0; i < inputs.length; i++) {
+        //         inputs[i].checked = false;
+        //     }
+        // }
     }
     
 }

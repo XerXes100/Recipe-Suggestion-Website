@@ -1,0 +1,60 @@
+// (async () => {
+    //     for (var i=0; i<ar.length; i++) {
+    //         var string1 = ar[i];
+    //         var ingredient_jname = string1.charAt(0).toLowerCase() + string1.slice(1);
+    //         ingredient_jname = ingredient_jname.trim();
+    //         console.log(ingredient_jname);
+    //         var query2 = 'select Ingredient_Id from ingredients where Ingredient_Name = ?';
+    //         var values = [ingredient_jname];
+    //         // result_id = async () => {
+    //         //         await con.awaitQuery(query2, values, function (error, results) {
+    //         //         console.log(results);
+    //         //         // var resultArray = Object.values(JSON.parse(JSON.stringify(rows)));
+    //         //         // console.log(resultArray);
+    //         //         console.log(results[0].Ingredient_Id);
+    //         //         ing_ids.push(results[0].Ingredient_Id);
+    //         //         console.log(ing_ids);
+    //         //     });
+    //         // };
+    //         // result_id();
+    
+    //         // con.query(query2, values, function (error, results) {
+    //         //     console.log(results);
+    //         //     // var resultArray = Object.values(JSON.parse(JSON.stringify(rows)));
+    //         //     // console.log(resultArray);
+    //         //     console.log(results[0].Ingredient_Id);
+    //         //     ing_ids.push(results[0].Ingredient_Id);
+    //         //     console.log(ing_ids);
+    //         // });
+    
+    //         (async () => {
+    //             try {
+    //                 await query_x(query2, values, function (error, results) {
+    //                     console.log(results);
+    //                     // var resultArray = Object.values(JSON.parse(JSON.stringify(rows)));
+    //                     // console.log(resultArray);
+    //                     console.log(results[0].Ingredient_Id);
+    //                     ing_ids.push(results[0].Ingredient_Id);
+    //                     console.log(ing_ids);
+    //                 });
+    //             } finally {
+    //                 // con.end();
+    //             }
+    //         })()
+    //     }
+    // })()
+
+    // const rows = await query_x(query2, values);
+    // console.log(rows);
+
+    // ar = ['avocado', 'garlic']
+    // ing_ids = [101, 190]
+    // (101, 190)
+
+    
+    // if (results.length > 0) {
+    //     res.redirect("/welcome");
+    // } else {
+    //     res.redirect("/");
+    // }
+    // res.end();
