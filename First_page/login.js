@@ -81,7 +81,40 @@ app.get("/tofu", function (req, res) {
     res.sendFile(reqPath3);
 });
 
+app.get("/dosa", function (req, res) {
+    // res.sendFile("./First_page/index.html");
+    // res.sendFile("../S");
+    let reqPath4 = path.join(__dirname, '../Home_Page/dosa.html');
+    res.sendFile(reqPath4);
+});
 
+app.get("/soup", function (req, res) {
+    // res.sendFile("./First_page/index.html");
+    // res.sendFile("../S");
+    let reqPath5 = path.join(__dirname, '../Home_Page/soup.html');
+    res.sendFile(reqPath5);
+});
+
+app.get("/pasta", function (req, res) {
+    // res.sendFile("./First_page/index.html");
+    // res.sendFile("../S");
+    let reqPath6 = path.join(__dirname, '../Home_Page/pasta.html');
+    res.sendFile(reqPath6);
+});
+
+app.get("/vegan", function (req, res) {
+    // res.sendFile("./First_page/index.html");
+    // res.sendFile("../S");
+    let reqPath7 = path.join(__dirname, '../Home_Page/vegan.html');
+    res.sendFile(reqPath7);
+});
+
+app.get("/cbc", function (req, res) {
+    // res.sendFile("./First_page/index.html");
+    // res.sendFile("../S");
+    let reqPath8 = path.join(__dirname, '../Home_Page/cbc.html');
+    res.sendFile(reqPath8);
+});
 
 
 app.post("/", encoder, function (req, res) {
