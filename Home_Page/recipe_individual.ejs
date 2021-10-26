@@ -10,23 +10,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" rel="stylesheet"/>
-    <title>Tofu Banh Mi</title>
+    <title><%= recipe_name%></title>
 </head>
 
 <body>
 
     <div class="header">
-        <img src="TitleLogo_2.png" alt="TitleLogo" class="title_img">
+        <img src="../../TitleLogo_2.png" alt="TitleLogo" class="title_img">
         <ul class="nav_bar">
-            <li class="nav_links"><a href="#home.html">Home</a></li>
-            <li class="nav_links"><a href="#about_us.html">About Us</a></li>
+            <li class="nav_links"><a href="http://localhost:8000/welcome">Home</a></li>
+            <li class="nav_links"><a href="http://localhost:8000/aboutus">About Us</a></li>
             <li class="nav_links"><a href="#profile.html">Profile</a></li>
         </ul>
     </div><hr>
 	
 	<div class="contain">
+
 		<div class="rec1">
-			<img src="recipe_images/<%= recipe_name%>.jpg">
+			<img src="../../recipe_images/<%=recipe_name%>.jpg">
 		</div>
 		
 		<div class="recipe_name">
@@ -67,10 +68,12 @@
 		
 		<div class="steps">
 			<% for (var i=0; i<steps.length; i++) {%>
-				<div class="step<%=(i+1)%>">
-					<h4>Step <%=(i+1)%></h4>
-					<p><%= steps[i] %></p>
-				</div>
+				<% if(steps[i] != null) { %>
+					<div class="step<%=(i+1)%>">
+						<h4>Step <%=(i+1)%></h4>
+						<p><%= steps[i] %></p>
+					</div>
+				<% } %>
 			<% } %>
 				
 				<!-- <div class="step2">

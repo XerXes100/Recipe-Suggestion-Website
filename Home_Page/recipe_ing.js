@@ -12,19 +12,25 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, "../First_page/assets")));
 
+// app.engine('html', require('ejs').renderFile);
+// app.set('view engine', 'html');
+
+// app.engine('ejs', require('ejs').renderFile);
+// app.set('view engine', 'ejs');
+
+// app.set('views', __dirname);
+
+app.set('views', path.join(__dirname, '/views'));
+
+// Set view engine as EJS
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
-
-app.engine('ejs', require('ejs').renderFile);
-app.set('view engine', 'ejs');
-
-app.set('views', __dirname);
 
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "sang123",
-    database: "user_info",
+    password: "MySQLShell@900",
+    database: "the_home_cook",
 });
 
 con.connect(function (err) {
@@ -71,7 +77,7 @@ async function fetch_recipe_ids(res, new_ing_ids) {
     console.log("ing_ids with join"+new_ing_ids.join(','));
     console.log("updated:"+  new_ing_ids);
 
-    var recipe_query = 'select Recipe_Id from relational where Ingre_Id in (' + new_ing_ids.join(',') + ')';
+    var recipe_query = 'select Recipe_Id from Relational where Ingre_Id in (' + new_ing_ids.join(',') + ')';
     var recipe_values = [new_ing_ids];
     console.log(recipe_query);
 
@@ -178,37 +184,68 @@ app.get("/show_recipes/:recipe_id/:recipe_name", function (req, res) {
     let recipe_name = req.params.recipe_name;
     let values = [recipe_id];
     
-    let get_ingredients = 'select Ingre_id from relational where Recipe_id = ?';
+    let get_ingredients = 'select Ingre_Id from Relational where Recipe_id = ?';
     con.query(get_ingredients, values, function(error, results) {
         if (results.length > 0) {
             console.log("Ingredient Ids, show recipes ke andar");
+            console.log(results);
+            // for (var i=0; i<results.length; i++) {
+            //     console.log(results[i].Ingre_Id);
+            //     let get_names = 'select Ingredient_Name from Ingredients where Ingredient_Id = ?';
+            //     con.query(get_names, [results[i].Ingre_Id], function(errors, results_2) {
+            //         if (results_2 > 0) {
+            //             for(var t=0; t<results_2.length; t++) {
+            //                 console.log(results_2[t].Ingredient_Name);
+            //                 ingredient_names.push(results_2[t].Ingredient_Name);
+            //             }
+            //         }
+            //     });
+            //     console.log("Ho gaya bhai");
+            //     console.log(ingredient_names);
+            // }
+            var temp = Array();
+            
             for (var i=0; i<results.length; i++) {
-                console.log(results[i].Ingre_Id);
-                let get_names = 'select Ingredient_Name from ingredients where Ingredient_Id = ?';
-                con.query(get_names, [results[i].Ingre_Id], function(errors, results_2) {
-                    if (results_2 > 0) {
-                        for(var t=0; t<results_2.length; t++) {
-                            console.log(results_2[t].Ingredient_Name);
-                            ingredient_names.push(results_2[t].Ingredient_Name);
-                        }
-                    }
-                });
-                let get_steps = 'select Step_1, Step_2, Step_3, Step_4, Step_5 from Recipes where Recipe_No = ?';
-                con.query(get_steps, [recipe_id], function(error, results_3) {
-                    steps.push(results_3[0].Step_1);
-                    steps.push(results_3[0].Step_2);
-                    steps.push(results_3[0].Step_3);
-                    steps.push(results_3[0].Step_4);
-                    steps.push(results_3[0].Step_5);
-                });
+                temp.push(results[i].Ingre_Id);
             }
+            console.log("temp array:" + temp);
+            console.log(temp.join(','));
+
+            let get_names = 'select Ingredient_Name from Ingredients where Ingredient_Id in (' + temp.join(',') + ')';
+            con.query(get_names, function(errors, results_2) {
+                console.log("Entered here!");
+                console.log(results_2);
+                if (results_2.length > 0) {
+                    console.log("Sahi hai");
+                    for(var t=0; t<results_2.length; t++) {
+                        console.log(results_2[t].Ingredient_Name);
+                        ingredient_names.push(results_2[t].Ingredient_Name);
+                    }
+                    let get_steps = 'select Step_1, Step_2, Step_3, Step_4, Step_5 from Recipes where Recipe_No = ?';
+                    con.query(get_steps, [recipe_id], function(error, results_3) {
+                        console.log("Haa iske andar bhi  aa raha hai");
+                        steps.push(results_3[0].Step_1);
+                        steps.push(results_3[0].Step_2);
+                        steps.push(results_3[0].Step_3);
+                        steps.push(results_3[0].Step_4);
+                        steps.push(results_3[0].Step_5);
+                        console.log("Kar diya push steps");
+                        console.log(steps);
+                        let reqPath1 = path.join(__dirname, '../Home_Page/recipe_individual.ejs');
+                        res.render(reqPath1, {
+                            recipe_name: recipe_name,
+                            ingredient_names: ingredient_names,
+                            steps: steps
+                        });
+                        // ejs.renderFile(__dirname + '/recipes_individual.ejs', {
+                        //     recipe_name: recipe_name,
+                        //     ingredients: ingredient_names,
+                        //     steps: steps
+                        // });
+                    });
+                }
+            });
         }
-        // let reqPath1 = path.join(__dirname, '../Home_Page/recipes_individual.ejs');
-        // res.render(reqPath1, {
-        //     recipe_name: recipe_name,
-        //     ingredients: ingredient_names,
-        //     steps: steps
-        // });
     });
 });
 
