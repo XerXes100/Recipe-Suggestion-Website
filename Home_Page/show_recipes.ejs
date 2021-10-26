@@ -22,13 +22,12 @@
     </div>
     <hr>
     <p>Recipes</p>
-    <!-- <h1><%=recipes%></h1> -->
-    <h2><%=recipes[0].Recipe_Id%></h2>
+    <h2><%=recipes[0].Recipe_No%></h2>
     <table>
         <% if(recipes.length > 6) { %>
                 <%for(var i=0; i<6; i++){%>
                 <tr>
-                <td><%= recipes[i].Recipe_Id %></td>
+                <td><%= recipes[i].Recipe_No %></td>
                 <td><%= recipes[i].Recipe_Name %></td>
                 <td><%= recipes[i].Step_1 %></td>
                 <td><%= recipes[i].Step_2 %></td>
@@ -38,7 +37,7 @@
             <% } } else{ %>
                 <% for(var i=0; i<recipes.length; i++) {%>
                 <tr>
-                    <td><%= recipes[i].Recipe_Id %></td>
+                    <td><%= recipes[i].Recipe_No %></td>
                     <td><%= recipes[i].Recipe_Name %></td>
                     <td><%= recipes[i].Step_1 %></td>
                     <td><%= recipes[i].Step_2 %></td>
@@ -53,8 +52,8 @@
             <% for (let i = 0; i < 6; i++) { %>
                 <!-- Pass different parameters in the URL itself, one would be the array of steps-->
                 <div class="rec1">
-                    <a href="http://localhost:8080/show_recipes/<%=recipes[i].Recipe_Name%>"><img src="recipe_images/<%=recipes[i].Recipe_Name%>.jpg"></a>
-                    <a href="http://localhost:8080/show_recipes/<%=recipes[i]%>"><p><%=recipes[i].Recipe_Name%></p></a>
+                    <a href="http://localhost:8080/show_recipes/<%=recipes[i].Recipe_No%>/<%=recipes[i].Recipe_Name%>"><img src="recipe_images/<%=recipes[i].Recipe_Name%>.jpg"></a>
+                    <a href="http://localhost:8080/show_recipes/<%=recipes[i].Recipe_No%>/<%=recipes[i].Recipe_Name%>"><p><%=recipes[i].Recipe_Name%></p></a>
                 </div>
             <% } %>
         <% } %>

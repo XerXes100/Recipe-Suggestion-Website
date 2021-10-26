@@ -74,6 +74,15 @@ app.get("/forgotpass", function (req, res) {
     res.sendFile(reqPath2);
 });
 
+app.get("/tofu", function (req, res) {
+    // res.sendFile("./First_page/index.html");
+    // res.sendFile("../S");
+    let reqPath3 = path.join(__dirname, '../Home_Page/tofu.html');
+    res.sendFile(reqPath3);
+});
+
+
+
 
 app.post("/", encoder, function (req, res) {
     var username = req.body.username;
