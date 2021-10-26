@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('recipe_individual_css.ejs'); %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <title>Tofu Banh Mi</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <img src="TitleLogo_2.png" alt="TitleLogo" class="title_img">
+        <ul class="nav_bar">
+            <li class="nav_links"><a href="#home.html">Home</a></li>
+            <li class="nav_links"><a href="#about_us.html">About Us</a></li>
+            <li class="nav_links"><a href="#profile.html">Profile</a></li>
+        </ul>
+    </div><hr>
+	
+	<div class="contain">
+		<div class="rec1">
+			<img src="recipe_images/<%= recipe_name%>.jpg">
+		</div>
+		
+		<div class="recipe_name">
+			<h1><%= recipe_name%></h1>
+		</div>
+		
+		<div class="ingr">
+        	<h4>Ingredients Required</h4>
+            <div class="ingr-list">
+				<ul>
+					<% for (var i=0; i<ingredient_names.length; i++) { %>
+						<li>1 <%=ingredient_names[i]%></li>
+					<% } %>
+					<!-- <li>1 (14-ounce) Tofu</li>
+					<li>1 Carrot</li>
+					<li>1 Daikon</li>
+					<li>1/2 Red Onion</li>
+					<li>1 cup Unseasoned rice vinegar</li>
+					<li>5tbsp Mayple syrup</li>
+					<li>2tsp Kosher salt</li>
+					<li>1/4 cup Vegan mayonnaise</li>
+					<li>1 tbsp Sriracha</li>
+					<li>1 cup Soy sauce</li>
+					<li>2 tbsp Sesame oil</li>
+					<li>3 Cloves garlic</li>
+					<li>3 inch Lemongrass</li>
+					<li>1/2 inch ginger</li>
+					<li>2 and 1/3 cup Cilantro</li>
+					<li>1/2 tsp Black pepper</li>
+					<li>2 tbsp Vegetable oil</li>
+					<li>1 Baguette</li>
+					<li>1 cup basil leaves</li>
+					<li>1 Cucumber</li>
+					<li>2 jalapeños</li> -->
+				</ul>
+			</div>
+		</div>
+		
+		<div class="steps">
+			<% for (var i=0; i<steps.length; i++) {%>
+				<div class="step<%=(i+1)%>">
+					<h4>Step <%=(i+1)%></h4>
+					<p><%= steps[i] %></p>
+				</div>
+			<% } %>
+				
+				<!-- <div class="step2">
+					<h4>Step 2</h4>
+					<p>Make pickled vegetables: In a medium bowl, combine carrot, daikon, red onion, rice wine vinegar, maple syrup, and salt. Stir until salt is dissolved, then press vegetables down to submerge in pickling liquid as much as possible.</p>
+				</div>
+				
+				<div class="step3">
+					<h4>Step 3</h4>
+					<p>"In a small bowl, combine mayo and Sriracha.Make marinade: In a blender or using an immersion blender, blend soy sauce, sesame oil, maple syrup, garlic, lemongrass, ginger, cilantro, salt, and black pepper until smooth."</p>
+				</div>
+				
+				<div class="step4">
+					<h4>Step 4</h4>
+					<p>Transfer dried tofu to a large plate. Pour marinade over tofu and turn to coat. Set aside two minutes. In a large skillet over medium heat, heat oil until shimmering. Gently shake marinade off tofu. (Reserve marinade.) Cook tofu until browned, about 3 minutes per side. The tofu will release from pan when it’s ready, so don’t force it. Transfer tofu back into marinade for at least 10 minutes.</p>
+				</div>
+				
+				<div class="step5">
+					<h4>Step 5</h4>
+					<p>To assemble: Spread baguettes with spicy mayo. Top with tofu, cilantro, basil, pickled vegetables (shaking off pickling liquid first), cucumber, and jalapeños.</p>
+				</div> -->
+			
+		</div>
+	</div>
+</body>
+</html>
