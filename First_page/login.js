@@ -116,6 +116,13 @@ app.get("/cbc", function (req, res) {
     res.sendFile(reqPath8);
 });
 
+app.get("/aboutus", function (req, res) {
+    // res.sendFile("./First_page/index.html");
+    // res.sendFile("../S");
+    let reqPath9 = path.join(__dirname, '../About_us/aboutus.html');
+    res.sendFile(reqPath9);
+});
+
 
 app.post("/", encoder, function (req, res) {
     var username = req.body.username;
