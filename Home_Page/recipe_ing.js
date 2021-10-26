@@ -14,6 +14,10 @@ app.use(express.static(path.join(__dirname, "../First_page/assets")));
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
+
+app.engine('ejs', require('ejs').renderFile);
+app.set('view engine', 'ejs');
+
 app.set('views', __dirname);
 
 var con = mysql.createConnection({
@@ -176,33 +180,35 @@ app.get("/show_recipes/:recipe_id/:recipe_name", function (req, res) {
     
     let get_ingredients = 'select Ingre_id from relational where Recipe_id = ?';
     con.query(get_ingredients, values, function(error, results) {
-
         if (results.length > 0) {
             console.log("Ingredient Ids, show recipes ke andar");
             for (var i=0; i<results.length; i++) {
                 console.log(results[i].Ingre_Id);
-                let get_names = 'select Ingredient_Name, Step_1, Step_2, Step_3, Step_4, Step_5 from ingredients where Ingredient_Id = ?';
+                let get_names = 'select Ingredient_Name from ingredients where Ingredient_Id = ?';
                 con.query(get_names, [results[i].Ingre_Id], function(errors, results_2) {
                     if (results_2 > 0) {
                         for(var t=0; t<results_2.length; t++) {
                             console.log(results_2[t].Ingredient_Name);
                             ingredient_names.push(results_2[t].Ingredient_Name);
-                            steps.push(results_2[t].Step_1);
-                            steps.push(results_2[t].Step_2);
-                            steps.push(results_2[t].Step_3);
-                            steps.push(results_2[t].Step_4);
-                            steps.push(results_2[t].Step_5);
                         }
                     }
                 });
+                let get_steps = 'select Step_1, Step_2, Step_3, Step_4, Step_5 from Recipes where Recipe_No = ?';
+                con.query(get_steps, [recipe_id], function(error, results_3) {
+                    steps.push(results_3[0].Step_1);
+                    steps.push(results_3[0].Step_2);
+                    steps.push(results_3[0].Step_3);
+                    steps.push(results_3[0].Step_4);
+                    steps.push(results_3[0].Step_5);
+                });
             }
         }
-        let reqPath1 = path.join(__dirname, '../Home_Page/recipes_individual.ejs');
-        res.render(reqPath1, {
-            recipe_name: recipe_name,
-            ingredients: ingredient_names,
-            steps: steps
-        });
+        // let reqPath1 = path.join(__dirname, '../Home_Page/recipes_individual.ejs');
+        // res.render(reqPath1, {
+        //     recipe_name: recipe_name,
+        //     ingredients: ingredient_names,
+        //     steps: steps
+        // });
     });
 });
 
