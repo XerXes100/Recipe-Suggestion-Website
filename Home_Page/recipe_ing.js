@@ -1,6 +1,7 @@
 
 var mysql = require('mysql');
 // const mysql = require('mysql-await');
+var fs = require('fs');
 var path = require('path');
 var express = require('express');
 const bodyParser = require('body-parser');
@@ -10,6 +11,10 @@ const util = require('util');
 const app = express();
 
 app.use(express.static(path.join(__dirname, "../First_page/assets")));
+
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+app.set('views', __dirname);
 
 var con = mysql.createConnection({
     host: "localhost",
@@ -65,18 +70,22 @@ async function fetch_recipe_ids(res, new_ing_ids) {
     var recipe_query = 'select Recipe_Id from relational where Ingre_Id in (' + new_ing_ids.join(',') + ')';
     var recipe_values = [new_ing_ids];
     console.log(recipe_query);
+
     con.query(recipe_query,recipe_values, function(error,results){
         console.log("Results: " + results);
+
         for (var i=0; i<results.length; i++) {
             console.log(results[i].Recipe_Id);
             if (!(results[i] in recipe_ids)) {
                 recipe_ids.push(results[i].Recipe_Id);
             }
         }
+
         console.log(recipe_ids);
-        let reqPath1 = path.join(__dirname, '../First_page/assets/show_recipes.html');
+        // let reqPath1 = path.join(__dirname, './show_recipes.ejs');
         // res.sendFile(reqPath1);
-        res.sendFile(reqPath1, {recipes: results});
+        // res.sendFile(reqPath1, {recipes: results});
+        fetch_recipes(res, recipe_ids);
     });
     console.log("Andar hai");
     // return recipe_ids;
@@ -91,19 +100,41 @@ async function ing_id(ar) {
     // console.log(recipe_ids);
 }
 
-function fetch_recipes(ar) {
-    console.log(ar);
-    let query1 = 'select * from users where user_name=? and user_pass=?';
-    let values = [username, password];
-    console.log(query1);
-    con.query(query1, values, function (error, results) {
-        console.log(results);
+function fetch_recipes(res, recipe_ids) {
+    // console.log(ar);
+    // let query1 = 'select * from users where user_name=? and user_pass=?';
+    // let values = [username, password];
+    // console.log(query1);
+    // con.query(query1, values, function (error, results) {
+    //     console.log(results);
+    //     if (results.length > 0) {
+    //         res.redirect("/recipes");
+    //     } else {
+    //         res.redirect("/");
+    //     }
+    //     res.end();
+    // });
+
+    let query_recipe = 'select * from Recipes where Recipe_no in (' +  recipe_ids + ')';
+    con.query(query_recipe, function(error, results) {
+        console.log(results[0].Recipe_Name);
         if (results.length > 0) {
-            res.redirect("/recipes");
-        } else {
-            res.redirect("/");
+            for (var i=0; i<results.length; i++) {
+                console.log(results[i].Recipe_Name);
+                console.log(results[i].Step_1);
+                console.log(results[i].Step_2);
+                console.log(results[i].Step_3);
+                console.log(results[i].Step_4);
+                console.log(results[i].Step_5);
+            }
+            let reqPath1 = path.join(__dirname, '../Home_Page/show_recipes.ejs');
+            // var myCss = {
+            //     style : fs.readFileSync('./First_page/assets/rec.ejs','utf8'),
+            // };
+            res.render(reqPath1, {
+                recipes: results
+            });
         }
-        res.end();
     });
 };
 
@@ -122,6 +153,43 @@ app.post("/", encoder, function (req, res) {
 app.get("/fetch_recipes", async function(req, res) {
     console.log(ing_ids);
     await fetch_recipe_ids(res, app.settings['ingredient_ids']).then(() => console.log(recipe_ids));
+});
+
+app.get("/show_recipes/:recipe_map", function (req, res) {
+    let ingredient_names = Array();
+    // let recipe_attributes = req.params.id;
+    // let recipe_id = recipe_attributes.Recipe_Id;
+
+    // var str = JSON.stringify(Array.from(recipe_map.entries()));
+    // var map = new Map(JSON.parse(req.params.recipe_map));
+    var fetch_map = req.params.recipe_map;
+    var map = JSON.parse(fetch_map);
+    let values= [map.Recipe_Id];
+
+    let get_ingredients = 'select Ingre_id from relational where Recipe_id = ?';
+    con.query(get_ingredients, values, function(error, results) {
+        if (results.length > 0) {
+            console.log("Ingredient Ids, show recipes ke andar");
+            for (var i=0; i<results.length; i++) {
+                console.log(results[i].Ingre_Id);
+                let get_names = 'select Ingredient_Name from ingredients where Ingredient_Id = ?';
+                con.query(get_names, [results[i].Ingre_Id], function(errors, results_2) {
+                    if (results_2 > 0) {
+                        for(var t=0; t<results_2.length; t++) {
+                            console.log(results_2[t].Ingredient_Name);
+                            ingredient_names.push(results_2[t].Ingredient_Name);
+                        }
+                        let reqPath1 = path.join(__dirname, '../Home_Page/recipes_individual.ejs');
+                        res.render(reqPath1, {
+                            recipe_name: map.Recipe_Name,
+                            ingredients: ingredient_names,
+                            steps: [map.Step_1, map.Step_2, map.Step_3, map.Step_4, map.Step_5]
+                        });
+                    }
+                });
+            }
+        }
+    });
 });
 
 app.listen(8080);

@@ -273,3 +273,16 @@ a:hover {
 .xyz{
     display: none;
 }
+
+.item_list{
+    /* background-color: #FF5454; */
+    /* position: relative; */
+    margin-top: -100px;
+    width:50%;
+    /* mar */
+    padding-left: 10px;
+    /* height: ; */
+    margin:auto;
+    border: 2px solid;
+    border-radius: 20px;
+}

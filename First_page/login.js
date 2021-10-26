@@ -7,9 +7,10 @@ const app2=express();
 const app = express();
 var validator = require("email-validator");
 app.use(express.static("assets"));
-// var popup = require('popups');
-let alert = require('alert'); 
-
+// var popupS = require('popups');
+// let alert = require('alert');
+// const popup = require('node-popup');
+// import alert from 'alert';
 
 // app.use("../assets", express.static("../assets"));
 // app.use(express.static(__dirname + '/assets'));
@@ -88,6 +89,14 @@ app.post("/", encoder, function (req, res) {
             res.redirect("/welcome");
         } else {
             res.redirect("/");
+            // alert("Invalid Credentials");
+            // window.alert("Invalid Credentials");
+            // import {alert} from 'node-popup';
+            // alert('Hello World!');
+            // popup.alert({
+            //         content: "Bol de password bhul gaya"
+            //     });
+            // alert('Invalid Credentials');
         }
         res.end();
     })
@@ -112,7 +121,7 @@ app.post("/signup", encoder, function (req, res) {
                     res.redirect("/welcome");
                 })
             } else {
-                alert("Andhe email aur password dhyaan se daal.");
+                
                 // console.log("Bol de password bhul gaya");
                 // popup.alert({
                 //     content: "Bol de password bhul gaya"
