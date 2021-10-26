@@ -45,8 +45,8 @@ schema
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "sang123",
-    database: "user_info",
+    password: "MySQLShell@900",
+    database: "the_home_cook",
 });
 
 con.connect(function (err) {
@@ -129,7 +129,7 @@ app.post("/", encoder, function (req, res) {
     var password = req.body.password;
     console.log(username);
     console.log(password);
-    let query1 = 'select * from users where user_name=? and user_pass=?';
+    let query1 = 'select * from Users where user_email=? and password=?';
     let values = [username, password];
     console.log(query1);
     con.query(query1, values, function (error, results) {
@@ -189,6 +189,13 @@ app.get("/welcome", function (req, res) {
     let reqPath = path.join(__dirname, '../Home_Page/home_page.html');
     res.sendFile(reqPath);
     // console.log(dirname);
+});
+
+app.get("/aboutus", function (req, res) {
+    // res.sendFile("./First_page/index.html");
+    // res.sendFile("../S");
+    let reqPath9 = path.join(__dirname, '../About_us/aboutus.html');
+    res.sendFile(reqPath9);
 });
 
 //set app port
