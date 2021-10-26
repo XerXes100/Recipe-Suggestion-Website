@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../First_page/assets/rec.css"> -->
+    <%- include('rec.ejs'); %>
+
+    <title>Recipes</title>
+</head>
+
+<body>
+    <div class="header">
+        <img src="../TitleLogo_2.png" alt="TitleLogo" class="title_img">
+        <ul class="nav_bar">
+            <li class="nav_links"><a href="#home.html">Home</a></li>
+            <li class="nav_links"><a href="#about_us.html">About Us</a></li>
+            <!-- <li class="nav_links"><a href="#pr.html"><Popular Recipies></a></li> -->
+            <li class="nav_links"><a href="#profile.html">Profile</a></li>
+        </ul>
+    </div>
+    <hr>
+
+    <div class="rec">
+        <% if (recipes.length > 6) { %>
+            <% for (let i = 0; i < 6; i++) { %>
+                <!-- Pass different parameters in the URL itself, one would be the array of steps-->
+                <div class="rec1">
+                    <a href="http://localhost:8080/show_recipes/<%=recipes[i].Recipe_No%>/<%=recipes[i].Recipe_Name%>"><img src="recipe_images/<%=recipes[i].Recipe_Name%>.jpg" alt=recipe_images/<%=recipes[i].Recipe_Name%>.jpg></a>
+                    <a href="http://localhost:8080/show_recipes/<%=recipes[i].Recipe_No%>/<%=recipes[i].Recipe_Name%>"><p><%=recipes[i].Recipe_Name%></p></a>
+                </div>
+            <% } %>
+        <% } %>
+        <% if (recipes.length < 6) { %>
+            <% for (let i = 0; i < recipes.length; i++) { %>
+                <!-- Pass different parameters in the URL itself, one would be the array of steps-->
+                <div class="rec1">
+                    <a href="http://localhost:8080/show_recipes/<%=recipes[i].Recipe_No%>/<%=recipes[i].Recipe_Name%>"><img src="recipe_images/<%=recipes[i].Recipe_Name%>.jpg" alt=recipe_images/<%=recipes[i].Recipe_Name%>.jpg></a>
+                    <a href="http://localhost:8080/show_recipes/<%=recipes[i].Recipe_No%>/<%=recipes[i].Recipe_Name%>"><p><%=recipes[i].Recipe_Name%></p></a>
+                </div>
+            <% } %>
+        <% } %>
+        
+		<!-- Tofu_Banh_Mi.jpg -->
+		<!-- <div class="rec2">
+			<a href="dosa.html"><img src="Masala_Dosa.jpg"></a>
+			<a href="dosa.html"><p>Masala Dosa</p></a>
+		</div>
+		
+		<div class="rec3">
+			<a href="soup.html"><img src="Tomato_Soup.jpg"></a>
+			<a href="soup.html"><p>Tomato Soup</p></a>
+		</div>
+		
+		<div class="rec4">
+			<a href="pasta.html"><img src="Red_Sauce_Pasta.jpeg"></a>
+			<a href="pasta.html"><p>Red Sauce Pasta</p></a>
+		</div>
+		
+		<div class="rec5">
+			<a href="vegan.html"><img src="Vegan_Crunchwraps.jpg"></a>
+			<a href="vegan.html"><p>Vegan Crunchwraps</p></a>
+		</div>
+		
+		<div class="rec6">
+			<a href="cbc.html"><img src="Cocoa_and_Blueberry_Cream.jpg"></a>
+			<a href="cbc.html"><p>Cocoa and Blueberry Cream</p></a>
+		</div> -->
+	</div>
+
+</body>
+</html>

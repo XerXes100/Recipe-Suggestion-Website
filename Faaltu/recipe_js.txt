@@ -1,0 +1,93 @@
+
+
+// var ing_ids = Array();
+    // var variable_temp;
+    // variable_temp = await fetch_ingredients(ar, ing_ids);
+    // if (variable_temp == true) {
+    //     print_ids(variable_temp);
+    // }
+
+// function resolveAfter2Seconds(ar) {
+    //     console.log("Resolveafter2secs called");
+    //     // return new Promise(resolve => {
+    //     //     // setTimeout(() => {
+    //     //     //     // console.log("Here");
+    //     //     //     resolve(fetch_ingredients(ar));
+    //     //     //     // fetch_ingredients(ar);
+    //     //     // }, 5000);
+    //     //     setTimeout(resolve, 2000);
+    //     // }).then(function() {
+    //     //     console.log("Wrapped setTimeout after 2000ms");
+    //     // });
+    //     return new Promise(function(resolve) {
+    //         resolve(fetch_ingredients(ar));
+    //     });
+    // }
+    
+    // var new_ing_ids;
+    // async function f1(ar) {
+    //     console.log("f1 called");
+    //     let myPromise = new Promise(function(resolve) {
+    //         resolve(fetch_ingredients(ar));
+    //     });
+    //     // new_ing_ids = await resolveAfter2Seconds(ar);
+    //     // await resolveAfter2Seconds(ar);
+    //     // console.log("Ing_ids in f1: " + ing_ids);
+    //     new_ing_ids = await myPromise(ar);
+    //     console.log("async:" + new_ing_ids);
+    //     // return new_ing_ids;
+    // }
+    
+    // async function f2(ar) {
+    //     // await f1(ar);
+    //     var f1 = function(ar) {
+    //         return new Promise(async function(resolve, reject) {
+    //             await fetch_ingredients(ar);
+    //             console.log("Ing_ids ka length: ", ing_ids.length);
+    //             console.log("ar length",ar.length);
+    //             if (ing_ids.length == ar.length) {
+    //                 resolve("It worked");
+    //             } else {
+    //                 reject("Sorry bro nahi ho raha");
+    //             }
+    //         });
+    //     }
+
+        // f1(ar).then(function() {
+        //     console.log("Ing Ids:" + ing_ids);
+        //     console.log("ing_ids with join" + ing_ids.join(','));
+        //     console.log("updated:"+  ing_ids);
+            
+        //     var recipe_query = 'select Recipe_Id from relational where Ingre_Id in (' + ing_ids.join(',') + ')';
+        //     var recipe_values = [ing_ids];
+        //     console.log(recipe_query);
+        //     con.query(recipe_query,recipe_values, function(error,results){
+        //         console.log("Results: " + results);
+        //     });
+        //     console.log("Andar hai");
+        // });
+        // console.log("Ing Ids:" + ing_ids);
+        // console.log("Ing Ids:" + new_ing_ids);
+        // console.log("ing_ids with join"+ new_ing_ids.join(','));
+        // console.log("updated:"+  new_ing_ids);
+        
+        // var recipe_query = 'select Recipe_Id from relational where Ingre_Id in (' + new_ing_ids.join(',') + ')';
+        // var recipe_values = [new_ing_ids];
+        // console.log(recipe_query);
+        // con.query(recipe_query,recipe_values, function(error,results){
+        //     console.log("Results: " + results);
+        // });
+        // console.log("Ing Ids:" + new_ing_ids);
+        // console.log("ing_ids with join"+new_ing_ids.join(','));
+        // console.log("updated:"+  new_ing_ids);
+        
+        // var recipe_query = 'select Recipe_Id from relational where Ingre_Id in (' + new_ing_ids.join(',') + ')';
+        // var recipe_values = [new_ing_ids];
+        // console.log(recipe_query);
+        // con.query(recipe_query,recipe_values, function(error,results){
+        //     console.log("Results: " + results);
+        // });
+        // console.log("Andar hai");
+    // };
+
+    // f2(ar);
