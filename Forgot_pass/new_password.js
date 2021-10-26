@@ -17,7 +17,7 @@ var con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "sang123",
-    database: "user_info",
+    database: "the_home_cook",
 });
 
 con.connect(function (err) {
@@ -37,7 +37,7 @@ app.post("/", encoder, function (req, res) {
     console.log(new_password);
     console.log(confirm_password);
     if (new_password == confirm_password) {
-        let query1 = 'update users set user_pass = ? where user_name = ?';
+        let query1 = 'update Users set pass = ? where user_email = ?';
         let values = [new_password, useremail];
         console.log(query1);
         con.query(query1, values, function (error, results) {

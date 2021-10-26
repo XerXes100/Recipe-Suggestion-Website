@@ -8,7 +8,7 @@ const app = express();
 var validator = require("email-validator");
 app.use(express.static("assets"));
 // var popupS = require('popups');
-// let alert = require('alert');
+let alert = require('alert');
 // const popup = require('node-popup');
 // import alert from 'alert';
 
@@ -45,7 +45,7 @@ schema
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "MySQLShell@900",
+    password: "sang123",
     database: "the_home_cook",
 });
 
@@ -129,7 +129,7 @@ app.post("/", encoder, function (req, res) {
     var password = req.body.password;
     console.log(username);
     console.log(password);
-    let query1 = 'select * from Users where user_email=? and password=?';
+    let query1 = 'select * from Users where user_email=? and pass=?';
     let values = [username, password];
     console.log(query1);
     con.query(query1, values, function (error, results) {
@@ -138,7 +138,7 @@ app.post("/", encoder, function (req, res) {
             res.redirect("/welcome");
         } else {
             res.redirect("/");
-            // alert("Invalid Credentials");
+            alert("Invalid Credentials");
             // window.alert("Invalid Credentials");
             // import {alert} from 'node-popup';
             // alert('Hello World!');
@@ -159,10 +159,10 @@ app.post("/signup", encoder, function (req, res) {
     console.log(validator.validate(username));
     console.log(schema.validate(password));
     if (validator.validate(username) == true && schema.validate(password) == true) {
-        con.query("SELECT user_name from users where user_name = '"+ username +"'", function(err, result, field){
+        con.query("SELECT user_email from Users where user_email = '"+ username +"'", function(err, result, field){
             if(result.length === 0){
                //new user logic
-               let query3 = 'insert into users(userid,user_name,user_pass) values(4,?,?);';
+               let query3 = 'insert into Users(user_id,user_email,pass) values(6,?,?);';
                 let values = [username, password];
                 console.log("Query: "+ query3);
                 con.query(query3, values, function (error, results) {
@@ -171,14 +171,15 @@ app.post("/signup", encoder, function (req, res) {
                 })
             } else {
                 
-                // console.log("Bol de password bhul gaya");
+                alert("Bol de password bhul gaya");
                 // popup.alert({
                 //     content: "Bol de password bhul gaya"
                 // // });
             }
         });
     } else {  
-        console.log("Andhe email aur password dhyaan se daal.");
+        alert("Accha aise karte hai?!?!")
+        // console.log("Andhe email aur password dhyaan se daal.");
     }
 });
 

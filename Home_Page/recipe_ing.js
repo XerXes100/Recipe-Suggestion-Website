@@ -29,7 +29,7 @@ app.set('view engine', 'html');
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "MySQLShell@900",
+    password: "sang123",
     database: "the_home_cook",
 });
 

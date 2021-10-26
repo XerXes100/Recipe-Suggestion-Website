@@ -73,6 +73,7 @@ document.getElementById('select').onclick = function() {
             temp_str += " "+x[i];
         // console.log(x);
         }
+        document.getElementById("lsk").style.display="inline-block";
         document.getElementById("ing").value = temp_str;
         ing_id(x);
     }
@@ -88,6 +89,11 @@ document.getElementById('select').onclick = function() {
         // }
     }
     
+}
+
+document.getElementById('lsk').onclick = function(){
+    document.getElementById("lsk").style.display="none";
+    document.getElementById("l_button_2").style.display="inline-block";
 }
 
 // document.getElementById('select').onclick = function() {

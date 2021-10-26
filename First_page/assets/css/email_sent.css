@@ -1,0 +1,36 @@
+body{
+	/* background-color: #FF5454; */
+	background-color: white;
+	color:white;
+	text-align: center;
+	font-size: 22px;
+	margin-top:18%;	
+}
+
+.logo{
+    position: absolute;
+    width: 450px;
+    height: 150px;
+    left: 35%;
+    top: 35px;
+}
+
+.email_sent{
+	border: 2px solid;
+	/* background-color: #e7e5e5; */
+	background-color: #FF5454;
+	border-radius: 20px;
+	width: 600px;
+	height: 250px;
+	margin-left: 32%;
+	border:none;
+}
+.email_sent>p{
+	position: absolute;
+	margin-top:107px;
+	margin-left: 50px;
+	/* margin: auto; */
+	font-family: "Montserrat", sans-serif;
+	/* color: black; */
+}
+
