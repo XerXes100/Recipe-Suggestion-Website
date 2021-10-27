@@ -20,17 +20,25 @@
             </div>
             
             <div>
-                <input type="password" class="pass" placeholder="New password" name="new_password"></input>
+                <input type="password" class="pass" placeholder="New password" name="new_password" id="xyz"></input>
             </div>
             
             <div>
-                <input type="password" class="passcon" placeholder="Confirm password" name="confirm_password"></input>
+                <input type="password" class="passcon" placeholder="Confirm password" name="confirm_password" id="abc"></input>
             </div>
             
             <div>
-            <input type="submit" class="l_button" value="Submit">
+            <input type="submit" class="l_button" value="Submit" onclick="click1()">
             </div>
         </form>
 </div>
+<script>
+    function click1(){
+    var x=document.getElementsByName("new_password")[0].required;
+    var y=document.getElementsByName("confirm_password")[0].required;
+    document.getElementById("xyz").innerHTML = x;
+    document.getElementById("abc").innerHTML = y;
+    }
+</script>
 </body>
 </html>

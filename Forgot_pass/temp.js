@@ -15,7 +15,7 @@ var con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "sang123",
-    database: "user_info",
+    database: "the_home_cook",
 });
 
 con.connect(function (err) {
@@ -48,7 +48,7 @@ app.post("/", encoder, function (req, res) {
     // var useremail = req.bodyuseremail;i
     useremail = req.body.useremail;
     console.log(useremail);
-    let query1 = 'select * from users where user_name=?';
+    let query1 = 'select * from Users where user_email=?';
     let values = [useremail];
     console.log(query1);
     con.query(query1, values, function (error, results) {
@@ -60,7 +60,7 @@ app.post("/", encoder, function (req, res) {
             var mailOptions = {
                 from: 'wpproject1234@gmail.com',
                 to: useremail,
-                subject: 'Sending Email using Node.js',
+                subject: 'Password Reset',
                 text: 'Please visit the following link to reset your password: \
                         http://localhost:5000'
               };
