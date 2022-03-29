@@ -1,0 +1,291 @@
+body {
+  background-color: #F5F5F5;
+}
+
+.title_img {
+  width: 270px;
+  height: 80px;
+}
+
+.nav_bar {
+  list-style-type: none;
+  margin-top: 20px;
+  margin-right: 75px;
+  padding: 0;
+  display: inline;
+}
+
+.nav_links {
+  display: inline;
+  margin: 40px;
+  font-size: 22px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 7px;
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: #FF5454;
+}
+
+.main-content {
+  font-family: "Montserrat", sans-serif;
+  padding: 3px 30px;
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.pantry {
+  background-color: lightgrey;
+  border-radius: 25px;
+  display: inline-block;
+  padding: 15px;
+  height: 630px;
+}
+
+.pantry-header {
+  text-align: center;
+  padding: 3px 50px;
+  border-radius: 20px;
+  background-color: #FF5454;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.pantry-contents {
+  text-align: center;
+  padding: 3px 50px;
+}
+
+.divider {
+  margin: 8px 0px;
+}
+
+.total-items {
+  margin-top: 70px;
+}
+
+.edit-pantry {
+  text-align: center;
+  padding: 5px 50px;
+  border-radius: 20px;
+  background-color: white;
+  font-size: 16px;
+  color: #FF5454;
+  margin-top: 195px;
+}
+
+.recipes {
+  display: inline-block;
+  padding: 0px 20px 15px 50px;
+}
+
+.recipes-header {
+  text-align: center;
+  padding: 3px 120px;
+  border-radius: 20px;
+  background-color: #FF5454;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.recipes-display {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.recipes-box {
+  height: 250px;
+  width: 200px;
+  background-color: lightgrey;
+  margin: 13px 10px;
+  display: inline-block;
+}
+
+.recipe-images {
+  height: 200px;
+  width: 200px;
+}
+
+.more-recipes {
+  text-align: center;
+  padding: 3px 40px;
+  border-radius: 20px;
+  background-color: #FF5454;
+  font-size: 17px;
+  color: white;
+  margin-left: 39%;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+/* .sc_roll_1 {
+  height: 500px;
+  width: 1000px;
+  margin: auto;
+  background-color: cornsilk;
+}
+
+.carousel-control-next,
+.carousel-control-prev
+  {
+  filter: invert(100%);
+}
+
+.sidenav {
+  margin-left: 20px;
+  background-color: #FAF9F6;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited {
+  background-color: white !important;
+  outline: none;
+  box-shadow: none !important;
+}
+
+.ingredient {
+  color: #FF0000;
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+}
+
+.img_resize {
+  height: 500px;
+  width: 1000px;
+}
+
+.carousel-caption {
+  color: rgb(64, 64, 64) !important;
+  font-weight: 700;
+  font-size: 30px !important;
+  position: relative;
+  margin-bottom: 140px;
+  margin-left: 65px;
+}
+
+#dropdownMenuButton {
+  background-color: rgb(221, 218, 218);
+  color: black;
+  width: 370px;
+}
+
+#dropdownMenuButton:hover {
+  background-color: #FF5454;
+}
+
+.dropdown-menu {
+  width: 370px;
+}
+
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus {
+  background-color: #FF5454;
+}
+
+::selection {
+  color: #fff;
+  background: #664AFF;
+}
+
+.wrapper {
+  max-width: 450px;
+  margin: 150px auto;
+}
+
+.wrapper .search-input {
+  background: #fff;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+}
+
+.search-input input {
+  height: 55px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0 60px 0 20px;
+  font-size: 18px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-input.active input {
+  border-radius: 5px 5px 0 0;
+}
+
+.search-input .autocom-box {
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.search-input.active .autocom-box {
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.autocom-box li {
+  list-style: none;
+  padding: 8px 12px;
+  display: none;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+}
+
+.search-input.active .autocom-box li {
+  display: block;
+}
+
+.autocom-box li:hover {
+  background: #efefef;
+}
+
+.search-input .icon {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  line-height: 55px;
+  font-size: 20px;
+  color: #644bff;
+  cursor: pointer;
+}
+
+.poprec {
+  border-radius: 15px;
+  border: 2.25px solid black;
+  text-align: center;
+  margin: auto;
+  width: 1000px;
+  font-size: xx-large;
+  color: #FF5454;
+  background-color: #e7e5e5;
+} */

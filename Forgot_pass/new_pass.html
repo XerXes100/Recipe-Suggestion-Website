@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/new_pass.css">
+    <title>New Password</title>
+</head>
+<body>
+    <div>
+        <!-- <img class="logo" src="../TitleLogo_forget.png" alt=""> -->
+        <a href="http://localhost:8000"><img class="logo" src="TitleLogo_forget.png" alt=""></a>
+    </div>
+    
+    <div class="newpass_container">
+        <form action="http://localhost:5000" method="POST">
+            <div>
+                <input type="text" class="email" placeholder="Enter E-mail" name="emailid"></input>
+            </div>
+            
+            <div>
+                <input type="password" class="pass" placeholder="New password" name="new_password" id="xyz"></input>
+            </div>
+            
+            <div>
+                <input type="password" class="passcon" placeholder="Confirm password" name="confirm_password" id="abc"></input>
+            </div>
+            
+            <div>
+            <input type="submit" class="l_button" value="Submit" onclick="click1()">
+            </div>
+        </form>
+</div>
+<script>
+    function click1(){
+    var x=document.getElementsByName("new_password")[0].required;
+    var y=document.getElementsByName("confirm_password")[0].required;
+    document.getElementById("xyz").innerHTML = x;
+    document.getElementById("abc").innerHTML = y;
+    }
+</script>
+</body>
+</html>
